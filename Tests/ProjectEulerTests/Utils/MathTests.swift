@@ -4,7 +4,7 @@ import XCTest
 class MathTests: XCTestCase {
     func testStaticFibonnaccis() throws {
         for (idx, ans) in NumberFixtures.fibonaccis {
-            XCTAssertEqual(fib(num: idx), ans)
+            XCTAssertEqual(fib(n: idx), ans)
         }
     }
 }
