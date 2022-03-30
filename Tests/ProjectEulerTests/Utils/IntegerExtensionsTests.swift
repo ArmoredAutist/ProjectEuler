@@ -4,11 +4,11 @@ import XCTest
 class IntegerExtensionsTests: XCTestCase {
     func testFirst100kPrimes() throws {
         /*
-         Initial runtime is 82 seconds to evaluate 1-100,000 against the hard-
-         coded list of the first 100k primes.
+         Running a sequential 1...100000 loop takes upwards of 80 seconds to
+         evaluate. `DispatchQueue` reduces run time reliably to around 1 second.
          */
-        for num in 1...100000 {
-            XCTAssertEqual(num.isPrime, Primes.contains(num))
+        DispatchQueue.concurrentPerform(iterations: NumberFixtures.primes.count) { (num) in
+            XCTAssertEqual(num.isPrime, NumberFixtures.primes.contains(num))
         }
     }
 }
