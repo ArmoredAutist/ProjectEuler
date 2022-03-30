@@ -1,10 +1,3 @@
-//
-//  Math.swift
-//  
-//
-//  Created by The Armored Autist on 3/28/22.
-//
-
 import Foundation
 
 public func fib(num: Int) -> Int {
